@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mindyverse</title>
+<meta name="description" content="Mindyverse is an original AI fantasy series and visual art world by Mindy Chen. Watch When the Dream Remembers You, explore the Dream Archive and meet every Mira.">
+<meta property="og:title" content="MINDYVERSE · Another World Awaits.">
+<meta property="og:description" content="An original AI fantasy series about Mira, a girl whose dreams remember her.">
+<meta property="og:image" content="assets/img/portal-dream.webp">
+<meta name="theme-color" content="#101015">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Noto+Serif+SC:wght@400;600&family=Noto+Sans+SC:wght@300;400&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<!--MV:INLINE-->
+<div id="loader" aria-hidden="true"><svg viewBox="0 0 100 100"><path class="lc" d="M62 14a38 38 0 1 0 24 58A30 30 0 0 1 62 14Z" pathLength="1"/></svg><span>MINDYVERSE</span></div>
+<canvas id="dust" aria-hidden="true"></canvas>
+<div id="beams" aria-hidden="true"></div>
+<div id="pt" aria-hidden="true"><i class="l"></i><i class="r"></i></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="ripple"><feTurbulence type="fractalNoise" baseFrequency="0.012 0.03" numOctaves="2" seed="3" result="n"><animate attributeName="baseFrequency" dur="6s" values="0.012 0.03;0.016 0.04;0.012 0.03" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" in2="n" scale="9"/></filter>
+</svg>
+
+<a class="skiplink" href="#app">Skip to content</a>
+<header class="hd" id="hd">
+  <a class="logo" href="#home" aria-label="Mindyverse home">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.6 2.8a9.2 9.2 0 1 0 6.6 13.5A7.6 7.6 0 0 1 14.6 2.8Z"/><path fill="currentColor" d="M18.6 3.2l.55 1.6 1.6.55-1.6.55-.55 1.6-.55-1.6-1.6-.55 1.6-.55Z"/></svg>
+    <span>MINDYVERSE</span>
+  </a>
+  <nav class="nav" aria-label="Main">
+    <a href="#series" data-t="n_series">Series</a><a href="#archive" data-t="n_archive">Archive</a><a href="#world" data-t="n_worlds">Worlds</a><a href="#gallery" data-t="n_gallery">Gallery</a><a href="#passport" data-t="n_passport">Passport</a><a href="#studio" data-t="n_studio">Studio</a><a href="#shop" data-t="n_shop">Shop</a>
+  </nav>
+  <div class="hd-r">
+    <div class="lang" role="group" aria-label="Language"><button type="button" data-l="en">EN</button><button type="button" data-l="zh">中文</button></div>
+    <button class="menu-btn" type="button" id="menuBtn" aria-expanded="false" aria-controls="menu"><span></span><span></span><b class="sr" data-t="menu">Menu</b></button>
+  </div>
+</header>
+<div class="menu" id="menu" hidden>
+  <nav aria-label="Mobile">
+    <a href="#home" data-t="n_home">Home</a><a href="#series" data-t="n_series">Series</a><a href="#archive" data-t="n_archive">Archive</a><a href="#world" data-t="n_worlds">Worlds</a><a href="#gallery" data-t="n_gallery">Gallery</a><a href="#passport" data-t="n_passport">Passport</a><a href="#studio" data-t="n_studio">Studio</a><a href="#shop" data-t="n_shop">Shop</a>
+  </nav>
+  <div class="menu-foot"><span data-t="tagline">Another World Awaits.</span></div>
+</div>
+
+<main id="app" tabindex="-1"></main>
+
+<footer class="ft">
+  <img src="assets/img/emblem.webp" alt="Mindyverse emblem" width="120" height="120" loading="lazy">
+  <p class="ft-line" data-t="series_title">When the Dream Remembers You</p>
+  <div class="ft-links" id="ftLinks"></div>
+  <p class="ft-small"><span data-t="made">An original story world by Mindy Chen.</span> · © 2026 Mindy Chen</p>
+</footer>
+
+<script src="js/content.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
