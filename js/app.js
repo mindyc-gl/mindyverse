@@ -418,6 +418,8 @@ function render(h, scroll = true) {
   current = h;
   app.innerHTML = Pages[r[0]](r[1]);
   document.title = r[0] === 'home' ? 'MINDYVERSE · Another World Awaits.' : `${r[0] === 'episode' ? tx(byId(MV.episodes, r[1]).title) : r[0] === 'file' ? 'FILE ' + byId(MV.archive, r[1]).no : r[0] === 'character' ? tx((byId(MV.characters, r[1]) || MV.characters[0]).name) : t(TITLES[r[0]])} · MINDYVERSE`;
+  const trackKey = r.join('-');
+  if (window.gtag && trackKey !== window.__mvTracked) { window.__mvTracked = trackKey; gtag('event', 'page_view', { page_title: document.title, page_location: location.origin + location.pathname + (r[0] === 'home' ? '' : (h || '')) }); }
   const navKey = r[0] === 'character' ? 'world' : r[0] === 'episode' ? 'series' : r[0] === 'file' ? 'archive' : r[0];
   document.querySelectorAll('.nav a').forEach(a => a.setAttribute('aria-current', a.getAttribute('href') === '#' + navKey ? 'page' : 'false'));
   if (scroll) scrollTo(0, 0);
